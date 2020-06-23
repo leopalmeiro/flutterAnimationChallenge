@@ -35,6 +35,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Color _colors = Colors.greenAccent;
+
+  void _setHeaderColor() {
+    setState(() {
+      _colors = Colors.black;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,19 +50,28 @@ class _MyHomePageState extends State<MyHomePage> {
         slivers: <Widget>[
           SliverAppBar(
             primary: true,
-            title: Text(widget.title),
+            //title: Text(widget.title),
             centerTitle: true,
             expandedHeight: 300,
             pinned: true,
             floating: true,
             snap: true,
-            backgroundColor: Colors.lightGreen,
+            backgroundColor: _colors,
+            onStretchTrigger: () async {
+              print('object');
+              setState(() {
+                _colors = Colors.redAccent;
+              });
+            },
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
-/*               title: Padding(
+              title: Padding(
                 padding: const EdgeInsets.only(top: 30),
-                child: Text(widget.title, style: TextStyle(color: Colors.black),),
-              ), */
+                child: Text(
+                  widget.title,
+                  style: TextStyle(color: _colors),
+                ),
+              ),
               background: Image.asset(
                 'assets/images/code.png',
                 fit: BoxFit.cover,
