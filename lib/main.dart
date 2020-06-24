@@ -1,3 +1,4 @@
+import 'package:animationChallengeApp/Animation01_component/animation01_main_screen.dart';
 import 'package:animationChallengeApp/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Animation Challenge',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -18,7 +19,10 @@ class MyApp extends StatelessWidget {
       //home: MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
         AppRoutes.HOME: (context) => MyHomePage(
-              title: 'Animations Chalenges',
+              title: 'Animation Challenge',
+            ),
+        AppRoutes.ANIMATION01: (context) => Animation01MainScreen(
+              title: 'Animation 01 Challenge',
             )
       },
     );
@@ -35,14 +39,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Color _colors = Colors.greenAccent;
-
-  void _setHeaderColor() {
-    setState(() {
-      _colors = Colors.black;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,77 +46,135 @@ class _MyHomePageState extends State<MyHomePage> {
         slivers: <Widget>[
           SliverAppBar(
             primary: true,
-            //title: Text(widget.title),
             centerTitle: true,
             expandedHeight: 300,
             pinned: true,
             floating: true,
             snap: true,
-            backgroundColor: _colors,
-            onStretchTrigger: () async {
-              print('object');
-              setState(() {
-                _colors = Colors.redAccent;
-              });
-            },
+            backgroundColor: Colors.white,
             flexibleSpace: FlexibleSpaceBar(
               centerTitle: true,
               title: Padding(
                 padding: const EdgeInsets.only(top: 30),
                 child: Text(
                   widget.title,
-                  style: TextStyle(color: _colors),
+                  style: TextStyle(color: Colors.black),
                 ),
               ),
-              background: Image.asset(
-                'assets/images/code.png',
-                fit: BoxFit.cover,
+              background: Padding(
+                padding: const EdgeInsets.only(bottom: 30),
+                child: Image.asset(
+                  'assets/images/code.png',
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
           SliverList(
-              delegate: SliverChildListDelegate([
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-            Text('data'),
-          ])),
+            delegate: SliverChildListDelegate(
+              [
+                InkWell(
+                  onTap: () =>
+                      Navigator.of(context).pushNamed(AppRoutes.ANIMATION01),
+                  child: Container(
+                    margin: EdgeInsets.all(20.0),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      elevation: 10.0,
+                      child: Column(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Image.asset(
+                              'assets/images/code.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Text(
+                            'Animation 01 Challenge',
+                            style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black54),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () =>
+                      Navigator.of(context).pushNamed(AppRoutes.ANIMATION01),
+                  child: Container(
+                    margin: EdgeInsets.all(20.0),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      elevation: 10.0,
+                      child: Column(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Image.asset(
+                              'assets/images/code.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Text(
+                            'Animation 01 Challenge',
+                            style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black54),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: () =>
+                      Navigator.of(context).pushNamed(AppRoutes.ANIMATION01),
+                  child: Container(
+                    margin: EdgeInsets.all(20.0),
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      elevation: 10.0,
+                      child: Column(
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Image.asset(
+                              'assets/images/code.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Text(
+                            'Animation 01 Challenge',
+                            style: TextStyle(
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black54),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
