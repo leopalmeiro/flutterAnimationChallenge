@@ -102,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Image.asset(
-                              'assets/images/code.png',
+                              'assets/images/01.png',
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -132,12 +132,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Image.asset(
-                              'assets/images/code.png',
+                              'assets/images/02.png',
                               fit: BoxFit.cover,
                             ),
                           ),
                           Text(
-                            'Animation 01 Challenge',
+                            'Animation 02 Challenge',
                             style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
@@ -165,12 +165,12 @@ class _MyHomePageState extends State<MyHomePage> {
                           Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Image.asset(
-                              'assets/images/code.png',
+                              'assets/images/03.png',
                               fit: BoxFit.cover,
                             ),
                           ),
                           Text(
-                            'Animation 01 Challenge',
+                            'Animation 03 Challenge',
                             style: TextStyle(
                                 fontSize: 30,
                                 fontWeight: FontWeight.bold,
