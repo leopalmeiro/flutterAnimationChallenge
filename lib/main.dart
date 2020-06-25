@@ -14,6 +14,20 @@ class MyApp extends StatelessWidget {
       title: 'Animation Challenge',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        accentColor: Colors.redAccent,
+        primaryColor: Colors.blue,
+        textTheme: TextTheme(
+          headline1: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.w700,
+              fontFamily: 'Lato',
+              fontSize: 30),
+          headline2: TextStyle(
+              color: Colors.black54,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'Lato',
+              fontSize: 20),
+        ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       //home: MyHomePage(title: 'Flutter Demo Home Page'),
@@ -73,14 +87,15 @@ class _MyHomePageState extends State<MyHomePage> {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                InkWell(
-                  onTap: () =>
-                      Navigator.of(context).pushNamed(AppRoutes.ANIMATION01),
-                  child: Container(
-                    margin: EdgeInsets.all(20.0),
+                Container(
+                  margin: EdgeInsets.all(20.0),
+                  child: InkWell(
+                    onTap: () =>
+                        Navigator.of(context).pushNamed(AppRoutes.ANIMATION01),
                     child: Card(
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15)),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
                       elevation: 10.0,
                       child: Column(
                         children: <Widget>[
@@ -93,10 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           ),
                           Text(
                             'Animation 01 Challenge',
-                            style: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black54),
+                            style: Theme.of(context).textTheme.headline1,
                           ),
                           SizedBox(
                             height: 10,

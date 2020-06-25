@@ -13,13 +13,14 @@ class _Animation01MainScreenState extends State<Animation01MainScreen>
     with SingleTickerProviderStateMixin {
   final SwiperController _swiperController = SwiperController();
   AnimationController _animationController;
-  bool _showDescription = false;
+  int _current = 0;
+  int _itemCount = 3;
 
   @override
   void initState() {
     super.initState();
     _animationController = AnimationController(
-      duration: const Duration(seconds: 2),
+      duration: const Duration(seconds: 3),
       vsync: this,
     )..forward();
   }
@@ -30,10 +31,19 @@ class _Animation01MainScreenState extends State<Animation01MainScreen>
     _animationController.dispose();
   }
 
-  void _showDescr() {
-    print('object');
+  void _showDescr(index) {
     setState(() {
-      _showDescription = !_showDescription;
+      if (index == 0) {
+        _current = 0;
+      } else if (index == _itemCount - 1) {
+        _current = index;
+      } else if (index >= _current) {
+        _current++;
+      } else {
+        _current--;
+      }
+
+      print(index);
     });
   }
 
@@ -48,23 +58,22 @@ class _Animation01MainScreenState extends State<Animation01MainScreen>
         ),
       ),
       body: Container(
-        margin: EdgeInsets.all(10),
+        margin: EdgeInsets.only(top: 25),
         child: Column(
           children: <Widget>[
             Text(
               'Thailand',
-              style: TextStyle(
-                  color: Colors.black87,
-                  fontSize: 30,
-                  fontWeight: FontWeight.w600),
+              style: Theme.of(context).textTheme.headline1,
             ),
-            Container(
-              height: 300,
+            SizedBox(
+              height: 10,
+            ),
+            Expanded(
               child: Swiper(
                 controller: _swiperController,
-                onIndexChanged: (index) => _showDescr(),
+                onIndexChanged: (index) => _showDescr(index),
                 loop: true,
-                itemCount: 3,
+                itemCount: _itemCount,
                 viewportFraction: 0.8,
                 itemBuilder: (context, index) {
                   return Container(
@@ -72,17 +81,15 @@ class _Animation01MainScreenState extends State<Animation01MainScreen>
                       children: <Widget>[
                         Image.asset('assets/images/code.png'),
                         SizedBox(
-                          height: 15,
+                          height: 10,
                         ),
                         AnimatedOpacity(
-                          onEnd: () => {
-                            setState(() {
-                              _showDescription = false;
-                            })
-                          },
-                          opacity: _showDescription ? 1 : 0,
+                          opacity: _current == index ? 1 : 0,
                           duration: const Duration(seconds: 1),
-                          child: Text('Begin'),
+                          child: Text(
+                            'Begin',
+                            style: Theme.of(context).textTheme.headline2,
+                          ),
                         ),
                       ],
                     ),
