@@ -1,4 +1,5 @@
 import 'package:animationChallengeApp/Animation01_component/animation01_main_screen.dart';
+import 'package:animationChallengeApp/Animation02_component/animation02_main_screen.dart';
 import 'package:animationChallengeApp/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 
@@ -37,6 +38,9 @@ class MyApp extends StatelessWidget {
             ),
         AppRoutes.ANIMATION01: (context) => Animation01MainScreen(
               title: 'Animation 01 Challenge',
+            ),
+        AppRoutes.ANIMATION02: (context) => Animation02MainScreen(
+              title: 'Animation 02 Challenge',
             )
       },
     );
@@ -120,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 InkWell(
                   onTap: () =>
-                      Navigator.of(context).pushNamed(AppRoutes.ANIMATION01),
+                      Navigator.of(context).pushNamed(AppRoutes.ANIMATION02),
                   child: Container(
                     margin: EdgeInsets.all(20.0),
                     child: Card(
@@ -153,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 InkWell(
                   onTap: () =>
-                      Navigator.of(context).pushNamed(AppRoutes.ANIMATION01),
+                      Navigator.of(context).pushNamed(AppRoutes.ANIMATION02),
                   child: Container(
                     margin: EdgeInsets.all(20.0),
                     child: Card(
