@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
       title: 'Animation Challenge',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        accentColor: Colors.redAccent,
         primaryColor: Colors.blue,
         textTheme: TextTheme(
           headline1: TextStyle(

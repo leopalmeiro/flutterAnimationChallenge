@@ -1,6 +1,7 @@
 import 'package:animationChallengeApp/models/app_info.dart';
 import 'package:animationChallengeApp/models/place.dart';
 import 'package:animationChallengeApp/models/trip.dart';
+import 'package:animationChallengeApp/models/user.dart';
 import 'package:animationChallengeApp/routes/app_routes.dart';
 
 List<AppInfo> LISTAPPS = [
@@ -10,6 +11,20 @@ List<AppInfo> LISTAPPS = [
       routeName: AppRoutes.HOME),
 ];
 
+List<User> LISTUSERS = [
+  User(
+      birthDate: DateTime.now(),
+      fullName: 'Leonardo Palmeiro',
+      imageSrc: 'https://randomuser.me/api/portraits/women/96.jpg'),
+  User(
+      birthDate: DateTime.now(),
+      fullName: 'Leonardo Palmeiro',
+      imageSrc: 'https://randomuser.me/api/portraits/men/96.jpg'),
+  User(
+      birthDate: DateTime.now(),
+      fullName: 'Leonardo Palmeiro',
+      imageSrc: 'https://randomuser.me/api/portraits/women/50.jpg'),
+];
 List<Trip> LISTTRIP = [
   Trip(
     title: 'Thailand',

@@ -5,5 +5,8 @@ class AppInfo {
   final String imagePath;
   final String routeName;
 
-  AppInfo({@required this.text,@required this.imagePath,@required this.routeName});
+  AppInfo(
+      {@required this.text,
+      @required this.imagePath,
+      @required this.routeName});
 }
